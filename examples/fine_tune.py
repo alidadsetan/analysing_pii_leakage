@@ -21,6 +21,7 @@ from pii_leakage.utils.output import print_highlighted, print_dict_highlighted
 
 
 def parse_args():
+    print("before creating parser")
     parser = transformers.HfArgumentParser((ModelArgs,
                                             NERArgs,
                                             TrainerArgs,
