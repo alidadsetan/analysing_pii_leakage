@@ -2,6 +2,8 @@
 # Licensed under the MIT License.
 from pprint import pprint
 
+print("before importing transformers")
+
 import transformers
 
 from pii_leakage.arguments.config_args import ConfigArgs
