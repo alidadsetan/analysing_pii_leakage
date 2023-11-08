@@ -29,7 +29,10 @@ def parse_args():
                                             OutdirArgs,
                                             EnvArgs,
                                             ConfigArgs))
-    return parser.parse_args_into_dataclasses()
+    print("parser created")
+    result = parser.parse_args_into_dataclasses()
+    print("arguments parssed")
+    return result
 
 
 def fine_tune(model_args: ModelArgs,
