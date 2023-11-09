@@ -6,7 +6,11 @@ print("before importing transformers")
 
 import transformers
 
+
+
 from pii_leakage.arguments.config_args import ConfigArgs
+
+
 from pii_leakage.arguments.dataset_args import DatasetArgs
 from pii_leakage.arguments.env_args import EnvArgs
 from pii_leakage.arguments.model_args import ModelArgs
@@ -23,7 +27,6 @@ from pii_leakage.utils.output import print_highlighted, print_dict_highlighted
 
 
 def parse_args():
-    print("before creating parser")
     parser = transformers.HfArgumentParser((ModelArgs,
                                             NERArgs,
                                             TrainerArgs,
@@ -32,9 +35,7 @@ def parse_args():
                                             OutdirArgs,
                                             EnvArgs,
                                             ConfigArgs))
-    print("parser created")
     result = parser.parse_args_into_dataclasses()
-    print("arguments parssed")
     return result
 
 
@@ -84,6 +85,5 @@ def fine_tune(model_args: ModelArgs,
 
 # ----------------------------------------------------------------------------
 if __name__ == "__main__":
-    print("main called!")
     fine_tune(*parse_args())
 # ----------------------------------------------------------------------------

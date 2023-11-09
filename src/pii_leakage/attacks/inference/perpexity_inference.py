@@ -27,7 +27,7 @@ class PerplexityInferenceAttack(ReconstructionAttack):
         """
         if self._tagger is None:
             print_highlighted("Loading tagger...")
-            ner_args = NERArgs(ner="flair", ner_model="flair/ner-english-ontonotes-large")
+            ner_args = NERArgs(ner="flair", ner_model="flair/ner-english-fast ")
             self._tagger = TaggerFactory.from_ner_args(ner_args, env_args=self.env_args)
         return self._tagger
 
