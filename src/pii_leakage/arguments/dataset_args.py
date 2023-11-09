@@ -34,14 +34,8 @@ class DatasetArgs:
         "help": "Limit the number of samples to load for this dataset"
     })
 
-    cache_loc: str = field(default=None, metadata={
-        "help": "Location for saving the scrubed dataset"
-    })
-
     def cache_dir(self) -> str:
-        if self.cache_loc == None:
-            return f"/tmp/{random.randint(0, 99**10)}" if self.dataset_mode == "mixed" else None
-        return self.cache_loc
+        return f"/tmp/{random.randint(0, 99**10)}" if self.dataset_mode == "mixed" else None
 
     def is_scrubbed(self) -> bool:
         return "scrubbed" in self.dataset_mode
