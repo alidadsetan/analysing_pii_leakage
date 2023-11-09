@@ -4,6 +4,7 @@ dataset_args:
   dataset_path: ../src/pii_leakage/extern/echr
   dataset_mode: undefended
   sample_duplication_rate: 1
+  cache_loc: /h/dadsetan/pii_dataset_cache
 
 trainer_args:
   save_steps: 750
