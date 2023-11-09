@@ -15,6 +15,6 @@ model_args:
 
 ner_args:
   ner: flair
-  ner_model: flair/ner-english-fast 
+  ner_model: flair/ner-english-fast
   anon_token: <MASK>
   anonymize: False

@@ -19,9 +19,9 @@ class NERArgs:
         "choices": ['flair']
     })
 
-    ner_model: str = field(default="flair/ner-english-fast ", metadata={
+    ner_model: str = field(default="flair/ner-english-fast", metadata={
         "help": "the NER model to use",
-        "choices": ["flair/ner-english-fast "]
+        "choices": ["flair/ner-english-fast"]
     })
 
     anon_token: str = field(default="<MASK>", metadata={
