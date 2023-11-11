@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "fine_tune",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "./examples/fine_tune.py",
             "console": "integratedTerminal",
             "justMyCode": false,
-            "args": ["--config_path", "/h/dadsetan/analysing_pii_leakage/configs/fine-tune/echr-gpt2-small-undefended.yml"],
+            "args": ["--config_path", "./configs/fine-tune/echr-gpt2-small-undefended.yml"],
             "env": {
                 "MASTER_ADDR": "localhost",
                 "OMP_NUM_THREADS": "16"
