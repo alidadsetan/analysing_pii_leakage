@@ -13,6 +13,7 @@
             "justMyCode": false,
             "args": ["--config_path", "./configs/fine-tune/echr-gpt2-small-undefended.yml"],
             "env": {
+                "LD_LIBRARY_PATH": "/pkgs/cuda-11.7/lib64/:/pkgs/cudnn-11.7-v8.5.0.96/lib/",
                 "MASTER_ADDR": "localhost",
                 "OMP_NUM_THREADS": "16"
             }
