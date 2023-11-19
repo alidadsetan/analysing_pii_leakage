@@ -1,9 +1,10 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, fields
 
 from transformers import IntervalStrategy, logging, TrainingArguments
+import os
 
 logger = logging.get_logger(__name__)
 
@@ -122,3 +123,15 @@ class TrainerArgs(TrainingArguments):
             self.evaluation_strategy = IntervalStrategy.STEPS
 
             self.max_steps = 2
+
+    def update(self, other):
+        for field in fields(self):
+            if other.__dict__[field.name] is not None and other.__dict__[field.name] != field.default:
+                self.__dict__[field.name] = other.__dict__[field.name]
+        return self
+    
+    def checkpoint_empty(self):
+        if self.__dict__["resume_from_checkpoint"] == False:
+            return True 
+        result = len(os.listdir(self.__dict__["output_dir"])) == 0
+        return result

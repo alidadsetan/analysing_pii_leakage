@@ -48,11 +48,14 @@ def fine_tune(model_args: ModelArgs,
     if config_args.exists():
         model_args = config_args.get_model_args()
         ner_args = config_args.get_ner_args()
-        train_args = train_args.replace(config_args.get_trainer_args())
+        train_args = config_args.get_trainer_args().update(train_args)
         dataset_args = config_args.get_dataset_args()
         privacy_args = config_args.get_privacy_args()
         outdir_args = config_args.get_outdir_args()
         env_args = config_args.get_env_args()
+
+    if train_args.checkpoint_empty():
+        train_args.__dict__['resume_from_checkpoint'] = False
 
     print_dict_highlighted(vars(config_args.get_privacy_args()))
 
