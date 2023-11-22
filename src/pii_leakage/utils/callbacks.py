@@ -62,7 +62,7 @@ class EvaluatePerplexityCallback(TrainerCallback):
         self.model = model
 
     def on_step_begin(self, args: TrainingArguments, state: TrainerState, control: TrainerControl, **kwargs):
-        if self.num_steps is not None and state.global_step % self.num_steps == 0:
+        if self.num_steps is not None and state.global_step % self.num_steps == 0 and state.global_step != 0:
 
             ppl = self.model.perplexity(self.dataset["text"])
             print_highlighted(f"{self.prefix}={ppl}")
