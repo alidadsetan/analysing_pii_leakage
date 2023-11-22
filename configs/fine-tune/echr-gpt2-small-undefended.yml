@@ -6,7 +6,7 @@ dataset_args:
   sample_duplication_rate: 1
 
 trainer_args:
-  save_steps: 750
+  save_steps: 50
   callback_after_n_steps: 750
   num_train_epochs: 4
   gradient_accumulation_steps: 4
