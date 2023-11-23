@@ -38,7 +38,7 @@ class CustomECHR(datasets.GeneratorBasedBuilder):
     def __init__(self, *args, **kwargs):
         self.df: pd.DataFrame = pd.DataFrame()
         ner_args = NERArgs(ner='flair',
-                           ner_model="flair/ner-english-fast",
+                           ner_model="flair/ner-english-ontonotes-large",
                            anon_token="<MASK>",
                            anonymize=kwargs.setdefault("config_name", None) == "scrubbed")
         self._tagger: Tagger = TaggerFactory.from_ner_args(ner_args)
