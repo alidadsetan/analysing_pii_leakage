@@ -11,7 +11,7 @@
 
 if [ "$#" -eq 0 ]
 then
-  echo "please provide the run number"
+  echo "please provide the run number (e.g. run1)"
   exit 1
 fi
 
