@@ -11,7 +11,7 @@
             "program": "./examples/fine_tune.py",
             "console": "integratedTerminal",
             "justMyCode": false,
-            "args": ["--config_path", "./configs/fine-tune/echr-gpt2-small-undefended.yml", "--output_dir", "/checkpoint/dadsetan/fine_tune"],
+            "args": ["--config_path", "./configs/fine-tune/echr-gpt2-small-undefended.yml", "--output_dir", "/checkpoint/dadsetan/fine_tune_undefended_run1"],
             "env": {
                 "LD_LIBRARY_PATH": "/pkgs/cuda-11.7/lib64/:/pkgs/cudnn-11.7-v8.5.0.96/lib/",
                 "MASTER_ADDR": "localhost",
