@@ -1,7 +1,7 @@
 # Fine-tune an LM on the enron text dataset.
 
 dataset_args:
-  dataset_path: ../src/pii_leakage/extern/echr
+  dataset_path: /h/dadsetan/analysing_pii_leakage/src/pii_leakage/extern/echr
   dataset_mode: undefended
   sample_duplication_rate: 1
 
@@ -12,6 +12,7 @@ trainer_args:
   gradient_accumulation_steps: 4
   per_device_train_batch_size: 16
   per_device_eval_batch_size: 16
+  resume_from_checkpoint: True
 
 privacy_args:
   target_epsilon: 8
