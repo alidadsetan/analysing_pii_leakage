@@ -1,4 +1,4 @@
-# Extract PII from an LM
+# Infer PII from an LM
 
 # dataset_args:
 #   dataset_path: /h/dadsetan/analysing_pii_leakage/src/pii_leakage/extern/echr
@@ -6,14 +6,14 @@
 #   sample_duplication_rate: 1
 
 attack_args:
-  attack_name: naive_extraction
-  sampling_rate: 100
-  seq_len: 128
+  attack_name: perplexity_inference
+  target_sequence: "Four police officers <MASK> and <MASK> were killed in a car crash by <T-MASK> who owns a dark red car."
+  pii_candidates: ["Teo Peric", "John Doe"]
 
 model_args:
   architecture: gpt2
   pre_trained: True
-  model_ckpt: /h/dadsetan/fine_tune_undefended_run1 # Edit this path to try your own model.
+  model_ckpt: /h/dadsetan/fine_tune_dp8_run1 # Edit this path to try your own model.
 
 ner_args:
   ner: flair

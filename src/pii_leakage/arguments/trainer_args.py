@@ -112,6 +112,11 @@ class TrainerArgs(TrainingArguments):
         }
     )
 
+    save_total_limit: int = field(
+        default=4,
+        metadata={"help": "max number of checkpoints"}
+    )
+
     def __post_init__(self):
         super().__post_init__()
         if self.dry_run:

@@ -12,7 +12,7 @@ attack_args:
 model_args:
   architecture: gpt2
   pre_trained: True
-  model_ckpt: /h/dadsetan/fine_tune_undefended_run1  # Edit this path to try your own model.
+  model_ckpt: /h/dadsetan/fine_tune_scrubbed_run1  # Edit this path to try your own model.
 
 ner_args:
   ner: flair

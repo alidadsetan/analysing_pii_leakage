@@ -1,4 +1,5 @@
 #!/bin/bash
+#SBATCH --qos=scavenger
 #SBATCH --gres=gpu:a40:1
 #SBATCH -J fine-tune-dp8
 #SBATCH -c 16

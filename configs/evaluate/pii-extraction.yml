@@ -1,6 +1,6 @@
 # Evaluate PII Extraction
 dataset_args:
-  dataset_path: ../src/pii_leakage/extern/echr
+  dataset_path: /h/dadsetan/analysing_pii_leakage/src/pii_leakage/extern/echr
   dataset_mode: undefended
   sample_duplication_rate: 1
 

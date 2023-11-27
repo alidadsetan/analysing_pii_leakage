@@ -275,7 +275,7 @@ class LanguageModel:
         trainer.use_cuda_amp = False
 
         try:
-            trainer.train()
+            trainer.train(resume_from_checkpoint=train_args.resume_from_checkpoint)
         finally:
             eps_prv = trainer.get_prv_epsilon()
             eps_rdp = trainer.get_rdp_epsilon()
